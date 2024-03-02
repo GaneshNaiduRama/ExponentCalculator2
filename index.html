@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponent Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center align the content */
+            margin-top: 50px; /* Add some top margin for better visibility */
+            background-color: rgb(148, 124, 124);
+        }
+
+        .form {
+            width: 300px;
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form label,
+        .form input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Exponent Finder</h1>
+    <div class="form">
+        <label for="num1">Enter the base value</label>
+        <input type="number" name="number1" id="number1">
+        <input type="number" name="number2" id="number2">
+        <div class="button-container">
+            <button onclick="exponent()">Result</button>
+            <button onclick="resetForm()">Reset Form</button>
+        </div>
+        <h2>Result</h2>
+        <div style=" margin-top: 10px;">
+            <div class="result" id="result">
+
+            </div>
+        </div>
+        
+    </div>
+    
+   
+
+    <script>
+        function exponent() {
+            var n1 = document.getElementById("number1").value;
+            var n2 = document.getElementById("number2").value;
+            result = n1**n2;
+            document.getElementById("result").innerHTML =result;
+        }
+
+        function resetForm() {
+            document.getElementById("number1").value = "";
+            document.getElementById("number2").value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
